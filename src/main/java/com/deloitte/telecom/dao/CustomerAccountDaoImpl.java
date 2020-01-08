@@ -59,6 +59,7 @@ public class CustomerAccountDaoImpl implements ICustomerAccountDao {
     	CustomerAccount user = findByMobileNo(mobileNo);
         return user != null;
     }
+    
 
     @Override
     public CustomerAccount save(CustomerAccount user) {

@@ -109,7 +109,7 @@ a {
 <div class="ui">
 <form method="GET" action="processregister">
   <div class="container">
-    <h1>New User Registration</h1>
+    <h1 align="center">New User Registration</h1>
     <hr>
 
     

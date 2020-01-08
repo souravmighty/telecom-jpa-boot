@@ -2,6 +2,7 @@ package com.deloitte.telecom.service;
 
 import com.deloitte.telecom.dao.ICustomerAccountDao;
 import com.deloitte.telecom.entities.CustomerAccount;
+import com.deloitte.telecom.exceptions.IncorrectMobileNoException;
 
 import java.util.List;
 
@@ -37,6 +38,10 @@ public class CustomerAccountServiceImpl implements ICustomerAccountService {
 
     @Override
     public CustomerAccount save(CustomerAccount user) {
+    	String phone=user.getMobileNo();
+    	if(phone==null || phone.length()!=10) {
+    		throw new IncorrectMobileNoException("Incorrect mobile number");
+    	}
         return getUserDao().save(user);
     }
 

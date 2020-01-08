@@ -80,6 +80,27 @@ a {
     padding-bottom: 5%;
     background-color: #add2c9;
 }
+.alert {
+  padding: 20px;
+  background-color: #f44336;
+  color: white;
+}
+
+.closebtn {
+  margin-left: 15px;
+  color: white;
+  font-weight: bold;
+  float: right;
+  font-size: 22px;
+  line-height: 20px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.closebtn:hover {
+  color: black;
+}
+
 </style>
 </head>
 <body>
@@ -87,7 +108,7 @@ a {
 <div class="ui">
 <form method="GET" action="logincheck">
   <div class="container">
-    <h1>Sign in</h1>
+    <h1 align="center">Sign in</h1>
     <hr>
 
     <label for="mobileno">Mobile No </label> 
@@ -95,7 +116,13 @@ a {
     <br>
     <label for="password">Password <label> 
     <input name="password" placeholder="Enter your password" type="password" required/>
-    
+    <c:if test="${message!=null}">
+    	<div class="alert">
+  		<span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span> 
+  		<strong><c:out value="${message}"/></strong>
+		</div>     
+        
+    </c:if>
     <hr>
 
 
