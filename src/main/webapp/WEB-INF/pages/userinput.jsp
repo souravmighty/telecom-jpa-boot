@@ -111,10 +111,10 @@ a {
     <h1 align="center">Sign in</h1>
     <hr>
 
-    <label for="mobileno">Mobile No </label> 
+    <label for="mobileno"><b>Mobile No</b> </label> 
     <input name="mobileno" placeholder="Enter your mobile number" type="text" />
     <br>
-    <label for="password">Password <label> 
+    <label for="password"><b>Password</b> <label> 
     <input name="password" placeholder="Enter your password" type="password" required/>
     <c:if test="${message!=null}">
     	<div class="alert">

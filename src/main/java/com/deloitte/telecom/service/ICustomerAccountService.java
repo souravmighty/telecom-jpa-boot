@@ -15,5 +15,5 @@ public interface ICustomerAccountService {
 
 	List<CustomerAccount> fetchUsers(int blockSize);
 	
-	void rechargeAccount(CustomerAccount c, double amount);
+	boolean rechargeAccount(CustomerAccount c, double amount);
 }

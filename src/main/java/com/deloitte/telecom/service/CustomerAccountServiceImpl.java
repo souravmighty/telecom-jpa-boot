@@ -58,8 +58,8 @@ public class CustomerAccountServiceImpl implements ICustomerAccountService {
 	}
 	
 	@Override
-	public void rechargeAccount(CustomerAccount c, double amount) {
-		userDao.rechargeAccount(c, amount);
+	public boolean rechargeAccount(CustomerAccount c, double amount) {
+		return userDao.rechargeAccount(c, amount);
 	}
 
     /*

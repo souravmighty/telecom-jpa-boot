@@ -83,7 +83,7 @@ a {
 }
 .alert {
   padding: 20px;
-  background-color: #f44336;
+  background-color: green;
   color: white;
 }
 
@@ -107,15 +107,22 @@ a {
 
 <div class="ui">
   <div class="container">
-    <h1>Welcome <c:out value="${user.name}"/></h1>
+    <h1>Welcome <c:out value="${user.getUser().name}"/></h1>
     <hr>
 
-    <h2> Id : <c:out value="${user.id}"/></h2>
-    <h2> Account Type : <c:out value="${user.getAccountType()}"/></h2>
-    <h2> Balance : <c:out value="${user.balance}"/></h2>
+    <h2> Id : <c:out value="${user.getUser().id}"/></h2>
+    <h2> Account Type : <c:out value="${user.getUser().getAccountType()}"/></h2>
+    <h2> Balance : <c:out value="${user.getUser().balance}"/></h2>
     <form method="get" action="recharge">
-    <label >Recharge:</label><br>
+    <label ><b>Recharge:</b></label><br>
     <input name="amount" placeholder="Enter amount" type="number" required>
+    <c:if test="${user.isRechargeDone()==true}">
+    	<div class="alert">
+  		<span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span> 
+  		<strong><c:out value="Recharge Successful!"/></strong>
+		</div>     
+        
+    </c:if>
     <button type="submit" class="registerbtn">Recharge</button>
     </form>
     <a href="/signout"><button type="submit" class="registerbtn">Sign Out</button></a><br>

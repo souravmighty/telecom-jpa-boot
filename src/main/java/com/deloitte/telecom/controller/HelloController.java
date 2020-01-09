@@ -69,7 +69,7 @@ public class HelloController {
             return new RedirectView("/userinput");
         }
         CustomerAccount appUser = sessionData.getUser();
-        ModelAndView mv = new ModelAndView("home", "user", appUser);
+        ModelAndView mv = new ModelAndView("home", "user", sessionData);
         return mv;
     }
 
@@ -99,8 +99,9 @@ public class HelloController {
     @GetMapping("/recharge")
     public ModelAndView recharge(@RequestParam("amount") double amount) {
     	CustomerAccount appUser = sessionData.getUser();
-    	service.rechargeAccount(appUser, amount);
-    	return new ModelAndView("home","user",appUser);
+    	boolean rechargeDone=service.rechargeAccount(appUser, amount);
+    	sessionData.setRechargeDone(rechargeDone);
+    	return new ModelAndView("home","user",sessionData);
     }
     
     @GetMapping("/error")

@@ -10,8 +10,19 @@ import org.springframework.web.context.annotation.SessionScope;
 public class SessionData {
 
     private CustomerAccount user;
+    
+    private boolean rechargeDone;
+    
 
-    public void setUser(CustomerAccount user){
+    public boolean isRechargeDone() {
+		return rechargeDone;
+	}
+
+	public void setRechargeDone(boolean rechargeDone) {
+		this.rechargeDone = rechargeDone;
+	}
+
+	public void setUser(CustomerAccount user){
         this.user=user;
     }
 

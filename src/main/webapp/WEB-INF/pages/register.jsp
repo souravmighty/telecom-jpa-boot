@@ -112,10 +112,10 @@ a {
     <h1 align="center">New User Registration</h1>
     <hr>
 
-    
+    <label for="name"><b>Name</b></label>
     <input name="name" placeholder="Enter your name" type="text" required/>
     <br>
-    
+    <label for="mobileno"><b>Mobile Number</b></label>
     <input name="mobileno" placeholder="Enter your mobile number" type="text" required/>
     <c:if test="${message!=null}">
     	<div class="alert">
@@ -125,15 +125,16 @@ a {
         
     </c:if>
     <br>
-    
+    <label for="password"><b>Password</b></label>
     <input name="password" placeholder="Choose your password" type="password" required/>
     <br>
-    <label for="accounttype">Account type:</label><br>
+    <label for="accounttype"><b>Account type:</b></label><br>
     <input type="radio" name="accounttype" value="prepaid"> Prepaid<br>
     <input type="radio" name="accounttype" value="postpaid"> Postpaid<br>
 
 
 	  <br>
+	<label for="balance"><b>Balance</b></label>
     <input name="balance" placeholder="Enter your initial balance" type="number" />
     <hr>
 
